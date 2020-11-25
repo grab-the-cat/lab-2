@@ -1,0 +1,28 @@
+﻿<html>
+<body>
+<b><big>Індивидуальне домашнє задання Захарової Поліни Дмитрівни</b>
+<ul><li><p><a href="index.html">Список питань</a></p></li></ul>
+<b>2.5.Приклад програми з коментарями</b></big><br>
+<p>
+<big>
+tasm hello.asm<br>
+tlink hello.obj<br>
+.model small                    ; модель пам'яті<br>
+.data                           ; сегмент даних<br>
+msg db 'Hello, World',13,10,'$' ; текстове повідомлення<br><br>
+
+.code                           ; сегмент коду<br>
+start:                          ; точка входу в програму <br>
+        mov ax, @data           ; налаштування сегментного<br>
+        mov ds, ax              ; регістру даних<br>
+        mov ah, 09h             ; функція DOS № 9&nbsp;– вивести рядок<br>
+        lea dx, msg             ; адреса текстового повідомлення<br>
+        int 21h                 ; виклик переривання DOS<br>
+        mov aр, 4Ch             ; Функція DOS № 4Ch&nbsp;– завершити програму <br>
+        mov al, 0               ; код повернення 0<br>
+        int 21h                 ; виклик переривання DOS<br>
+end start<br>
+</big>
+</p>
+</body>
+</html>
